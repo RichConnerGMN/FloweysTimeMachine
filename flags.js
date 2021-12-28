@@ -82,10 +82,10 @@ var flags = [
     ["unused"],
     ["undyne_trigger_override", "Debug variable. Allows Undyne to give her Pacifist speech even if one (but only one) monster is killed.", basicBool],
     ["fun", "The fun value. See above list for effects."],
-    ["hardmode", "Hard Mode.", basicBool],
+    ["hardmode", "Whether Hard Mode is enabled.", basicBool],
     ["true_pacifist", "In the Pacifist epilogue.", basicBool],
     ["disable_random_encounters", "Self-explanatory. Set at the start of the Undyne's Letter quest or after defeating Mettaton NEO.", basicBool],
-    ["flowey_seen_stalking", "Unaccessed. Tracks how often you backtracked to catch Flowey."],
+    ["flowey_seen_stalking", "Unaccessed. Tracks how often you backtracked and saw Flowey stalking you."],
     ["spared_last", "Whether you spared the previous enemy.", basicBool],
     ["escaped_last", "Whether you fled the previous battle.", basicBool],
     ["killed_last", "Whether you killed the previous enemy.", basicBool],
@@ -143,7 +143,7 @@ var flags = [
         "One piece",
         "Two pieces",
         "Three pieces",
-        "Four pieces, you Monster."
+        "Four pieces, you monster."
     ]],
     ["pushed_rock_4", "Whether you have completed the first rock-pushing puzzle.", basicBool],
     ["spared_napstablook", "Tracks your interaction with Napstablook in the Ruins.", [
@@ -160,8 +160,8 @@ var flags = [
     ["unused"],
     ["greeted_toriel", "How many times you have called Toriel to say hello."],
     ["flirted_toriel", "How many times you have called Toriel to flirt with her."],
-    ["call_mom_toriel", "Whether you have called Toriel 'mom'.", basicBool],
-    ["ruins_switches_pressed", "When greater than 25, changes the displayed text upon pressing a switch."],
+    ["call_mom_toriel", "Whether you have called Toriel 'Mom'.", basicBool],
+    ["ruins_switches_pressed", "Number of times you have pressed a correct switch in perspective hallway in Ruins. When greater than 25, changes the displayed text upon pressing a switch."],
     ["disobeyed_toriel", "How many times Toriel had to return you upstairs."],
     ["status_toriel", "Self-explanatory.", {
         "0": "Initial state",
@@ -183,7 +183,7 @@ var flags = [
     ["unused"],
     ["unused"],
     ["know_water_sausage", "Read about water sausages in Toriel's room. Makes you recognize the plant in Toriel's living room.", basicBool],
-    ["wrong_switches_pressed", "Gives you a hint after two failures."],
+    ["wrong_switches_pressed", "Number of times you have pressed an incorrect switch in perspective hallway in Ruins. Gives you a hint after two failures."],
     ["status_doggo", "Self-explanatory.", simpleDogStates],
     ["status_dogcouple", "Self-explanatory.", simpleDogStates],
     ["status_greaterdog", "Self-explanatory.", [
@@ -201,8 +201,8 @@ var flags = [
         "0": "Initial state",
         "1": "Have a Snowman Piece",
         "2": "Have a second Snowman Piece",
-        "4": "Ate the Piece in front of him",
-        "5": "Talked to him after"
+        "4": "Ate the Piece in front of them",
+        "5": "Talked to them after"
     }],
     ["status_snowdrake", "Self-explanatory.", [
         "Initial state",
@@ -245,7 +245,7 @@ var flags = [
         "4": "Encountered Lesser Dog"
     }],
     ["unused"],
-    ["status_inn", "Tracks your interaction with the innkeep.", [
+    ["status_inn", "Tracks your interaction with the innkeeper.", [
         "Initial state",
         "Stayed a night",
         "Stayed a night with no money"
@@ -422,7 +422,7 @@ var flags = [
     ["spared_greatdog", "Whether Greater Dog's pet capacity reached 100%. Used for its yellow credit.", basicBool],
     ["spared_aaron", "Whether Aaron flexed himself out of the room. Unaccessed (see flag 95).", basicBool],
     ["spared_moldsmalx", "Whether you Unhugged Moldbygg. Used for its yellow credit.", basicBool],
-    ["spared_woshua", "Whether you Spared Woshua without damaging him. Used for his yellow credit.", basicBool],
+    ["spared_woshua", "Whether you Spared Woshua without damaging him. Used for its yellow credit.", basicBool],
     ["spared_temmie", "Whether you Talked to or gave Temmie the Temmie Flakes. Used for her yellow credit.", basicBool],
     ["spared_maddummy", "Whether you Talked to Mad Dummy. Used for their yellow credit.", basicBool],
     ["spared_vulkin", "Whether you Spared Vulkin without damaging it. Used for its yellow credit.", basicBool],
@@ -559,7 +559,7 @@ var flags = [
     ["delivered_hotdog", "Whether you put a Hot Dog under the correct door at MTT Resort.", basicBool],
     ["tem_sell_parameter", "The number of items you need to sell (0-9) before Temmie takes particular interest in one. Decrements with all sales except Tem Flakes."],
     ["tem_flakes_sold", "If false, the first Tem Flakes you sell will be at a premium. After that, the flag is set to true.", basicBool],
-    ["status_hotel", "Tracks progress of the MTT Resort hotel. A value of 2 prevents the receptionist from repeating herself.", [
+    ["status_hotel", "Tracks progress of the MTT Resort hotel. A value of 2 prevents the receptionist from repeating themselves.", [
         "Initial state",
         "Stayed once",
         "Interacted again"
@@ -608,31 +608,31 @@ var flags = [
     ["unused"],
     ["unused"],
     ["unused"],
-    ["dimensional_box_A_1", "The item in a given slot of a given box.", items],
-    ["dimensional_box_A_2", "The item in a given slot of a given box.", items],
-    ["dimensional_box_A_3", "The item in a given slot of a given box.", items],
-    ["dimensional_box_A_4", "The item in a given slot of a given box.", items],
-    ["dimensional_box_A_5", "The item in a given slot of a given box.", items],
-    ["dimensional_box_A_6", "The item in a given slot of a given box.", items],
-    ["dimensional_box_A_7", "The item in a given slot of a given box.", items],
-    ["dimensional_box_A_8", "The item in a given slot of a given box.", items],
-    ["dimensional_box_A_9", "The item in a given slot of a given box.", items],
-    ["dimensional_box_A_10", "The item in a given slot of a given box.", items],
+    ["dimensional_box_A_1", "The item in slot 1 of Dimensional Box A.", items],
+    ["dimensional_box_A_2", "The item in slot 2 of Dimensional Box A.", items],
+    ["dimensional_box_A_3", "The item in slot 3 of Dimensional Box A.", items],
+    ["dimensional_box_A_4", "The item in slot 4 of Dimensional Box A.", items],
+    ["dimensional_box_A_5", "The item in slot 5 of Dimensional Box A.", items],
+    ["dimensional_box_A_6", "The item in slot 6 of Dimensional Box A.", items],
+    ["dimensional_box_A_7", "The item in slot 7 of Dimensional Box A.", items],
+    ["dimensional_box_A_8", "The item in slot 8 of Dimensional Box A.", items],
+    ["dimensional_box_A_9", "The item in slot 9 of Dimensional Box A.", items],
+    ["dimensional_box_A_10", "The item in slot 10 of Dimensional Box A.", items],
     ["box_A_interacted", "Whether you have interacted with Dimensional Box A. Unaccessed.", {
         "0": "Initial state",
         "999": "Interacted" // probably not intended for this but that's the only thing it does
     }],
     ["unused"],
-    ["dimensional_box_B_1", "The item in a given slot of a given box.", items],
-    ["dimensional_box_B_2", "The item in a given slot of a given box.", items],
-    ["dimensional_box_B_3", "The item in a given slot of a given box.", items],
-    ["dimensional_box_B_4", "The item in a given slot of a given box.", items],
-    ["dimensional_box_B_5", "The item in a given slot of a given box.", items],
-    ["dimensional_box_B_6", "The item in a given slot of a given box.", items],
-    ["dimensional_box_B_7", "The item in a given slot of a given box.", items],
-    ["dimensional_box_B_8", "The item in a given slot of a given box.", items],
-    ["dimensional_box_B_9", "The item in a given slot of a given box.", items],
-    ["dimensional_box_B_10", "The item in a given slot of a given box.", items],
+    ["dimensional_box_B_1", "The item in slot 1 of Dimensional Box B.", items],
+    ["dimensional_box_B_2", "The item in slot 2 of Dimensional Box B." items],
+    ["dimensional_box_B_3", "The item in slot 3 of Dimensional Box B.", items],
+    ["dimensional_box_B_4", "The item in slot 4 of Dimensional Box B.", items],
+    ["dimensional_box_B_5", "The item in slot 5 of Dimensional Box B.", items],
+    ["dimensional_box_B_6", "The item in slot 6 of Dimensional Box B.", items],
+    ["dimensional_box_B_7", "The item in slot 7 of Dimensional Box B.", items],
+    ["dimensional_box_B_8", "The item in slot 8 of Dimensional Box B.", items],
+    ["dimensional_box_B_9", "The item in slot 9 of Dimensional Box B.", items],
+    ["dimensional_box_B_10", "The item in slot 10 of Dimensional Box B." items],
     ["box_B_interacted", "Whether you have interacted with Dimensional Box B. Unaccessed.", {
         "0": "Initial state",
         "999": "Interacted"
@@ -1066,7 +1066,7 @@ var flags = [
     ]],
     ["unused"],
     ["seen_cast", "Whether the credits have activated, keeps them from re-activating even when the room changes.", basicBool],
-    ["but_it_refused", "Cannot die.", basicBool],
+    ["but_it_refused", "Whether your SOUL re-fuses after dying. Takes you to current battle group when re-fusing. Is not disabled after Asriel battle.", basicBool],
     ["conversation_asriel_fight", "Progress in Asriel's second phase.", [
         "Initial state",
         "SAVE available",
@@ -1093,7 +1093,7 @@ var flags = [
         "Scene complete"
     ]],
     ["conversation_asriel2", "The amount you have talked to Asriel in the Ruins."],
-    ["choice_left_toriel", "Your choice in the final scene.", [
+    ["choice_left_toriel", "Your choice of whether to stay with Toriel in the final scene.", [
         "I want to stay with you",
         "I have places to go"
     ]]
